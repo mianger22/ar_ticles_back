@@ -3,19 +3,17 @@
   "version": "1.0.0",
   "description": "This repository manages the comments of the Ar_ticles project",
   "main": "index.js",
-  "author": "Dmitry Ustinov <ustinnov.ru>",
-  "type": "module",
+  "private": true,
   "scripts": {
-    "start": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
-  "keywords": [],
+  "author": "Dmitry Ustinov <ustinnov.ru>",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.20.2",
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "express": "^4.18.3",
-    "http": "^0.0.1-security",
-    "nodemon": "^3.1.0"
+    "express": "^4.17.1",
+    "nodemon": "^2.0.13",
+    "sqlite3": "^5.0.2"
   }
 }
