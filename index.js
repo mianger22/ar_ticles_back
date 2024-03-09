@@ -1,6 +1,6 @@
 import express from "express";
 import http from "http";
-// import routes from "./routes/routes.js";
+import routes from "./src/routes.js";
 
 const app = express();
 const httpServ = http.Server(app);
@@ -12,4 +12,4 @@ httpServ.listen(port, (error) => {
     console.log(`Cервер запущен на порту ${port}`);
 });
 
-// routes(app);
+routes(app);
