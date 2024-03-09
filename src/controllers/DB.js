@@ -6,12 +6,12 @@ export class DB {
     }
 
     static async save_comment_db_method(comment_data) {
-        const { user_name, comment, date_creation } = comment_data;
+        const { user_name, comment, date_creation, user_mail } = comment_data;
 
         return new Promise((resolve, reject) =>
             db.run(
-                `INSERT INTO comments (user_name, comment, date_creation) VALUES (?, ?, ?)`,
-                [user_name, comment, date_creation],
+                `INSERT INTO comments (user_name, comment, date_creation, user_mail) VALUES (?, ?, ?, ?)`,
+                [user_name, comment, date_creation, user_mail],
                 (err) => (err ? reject(err) : resolve("Комментарий добавлен в Базу Данных"))
             )
         );

@@ -9,7 +9,8 @@ const save_comment = async (req, res) => {
             let comment_data = {
                 user_name: req.body.user_name,
                 comment: req.body.comment,
-                date_creation: req.body.date_creation
+                date_creation: req.body.date_creation,
+                user_mail: req.body.user_mail
             };
 
             // сохраняем их
