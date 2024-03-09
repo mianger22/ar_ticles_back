@@ -1,4 +1,4 @@
-import functionsDatabase from "./functionsDatabase";
+import functionsDatabase from "./functionsDatabase.js";
 
 export default function routingFunction(method) {
     return (req, res) => {

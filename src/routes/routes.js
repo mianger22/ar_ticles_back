@@ -1,6 +1,6 @@
 import cors from "cors";
 import bodyParser from "body-parser";
-import { get_comments, save_comment } from "../controllers/users.controllers";
+import { get_comments, save_comment } from "../controllers/users.controllers.js";
 
 export default function routes(app) {
     // настраиваем АПИ, чтобы не приходила ошибка CORS

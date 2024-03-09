@@ -1,5 +1,5 @@
-import DB from "../controllers/DB";
 import sqlite3 from "sqlite3";
+import { DB } from "../controllers/DB.js";
 
 export default class functionsDatabase {
     static async connectDB(

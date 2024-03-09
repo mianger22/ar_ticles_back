@@ -1,6 +1,6 @@
-import functionsDatabase from "../utils/functionsDatabase";
-import routingFunction from "../utils/routingFunction";
-import DB from "./DB";
+import functionsDatabase from "../utils/functionsDatabase.js";
+import routingFunction from "../utils/routingFunction.js";
+import { DB } from "./DB.js";
 
 const save_comment = async (req, res) => {
     try {
@@ -14,7 +14,7 @@ const save_comment = async (req, res) => {
 
             // сохраняем их
             functionsDatabase.connectDB(
-                DB.save_comment,
+                DB.save_comment_db_method,
                 comment_data,
                 functionForInteractingWithTheDatabase
             );
@@ -33,9 +33,9 @@ const save_comment = async (req, res) => {
     }
 };
 
-const get_comments = routingFunction(DB.get_comments);
+const get_comments = routingFunction(DB.get_comments_db_method);
 
-export default {
+export {
     get_comments,
     save_comment
 };

@@ -1,11 +1,11 @@
 let db;
 
-export default class DB {
+export class DB {
     static setDB(newDB) {
         db = newDB;
     }
 
-    static async save_comment(comment_data) {
+    static async save_comment_db_method(comment_data) {
         const { user_name, comment, date_creation } = comment_data;
 
         return new Promise((resolve, reject) =>
@@ -17,7 +17,7 @@ export default class DB {
         );
     }
 
-    static async get_comments() {
+    static async get_comments_db_method() {
         return new Promise((resolve, reject) =>
             db.all("SELECT * FROM comments", (err, row) =>
                 err ? reject(err) : !row ? resolve(null) : resolve([...row])
