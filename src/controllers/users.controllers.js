@@ -1,21 +1,21 @@
-const functionsDatabase = require("../utils/functionsDatabase");
-const routingFunction = require("../utils/routingFunction");
-const DB = require("./DB");
+import functionsDatabase from "../utils/functionsDatabase";
+import routingFunction from "../utils/routingFunction";
+import DB from "./DB";
 
-const saveComment = async (req, res) => {
+const save_comment = async (req, res) => {
     try {
         await (function () {
             // собираем вместе отправленные данные
-            let commentData = {
-                name: req.body.name,
-                avatar: req.body.avatar,
-                text: req.body.text,
+            let comment_data = {
+                user_name: req.body.user_name,
+                comment: req.body.comment,
+                date_creation: req.body.date_creation
             };
 
             // сохраняем их
             functionsDatabase.connectDB(
-                DB.saveComment,
-                commentData,
+                DB.save_comment,
+                comment_data,
                 functionForInteractingWithTheDatabase
             );
 
@@ -28,14 +28,14 @@ const saveComment = async (req, res) => {
         })();
     } catch (e) {
         res.status(500).json({
-            message: "Увы, ошибка сохранения: " + e.message,
+            message: `Ошибка сохранения: ${e.message}`,
         });
     }
 };
 
-const getAllComments = routingFunction(DB.getAllComments);
+const get_comments = routingFunction(DB.get_comments);
 
-module.exports = {
-    getAllComments,
-    saveComment
+export default {
+    get_comments,
+    save_comment
 };

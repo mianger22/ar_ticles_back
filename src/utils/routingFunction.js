@@ -1,6 +1,6 @@
-const functionsDatabase = require("./functionsDatabase");
+import functionsDatabase from "./functionsDatabase";
 
-module.exports = function routingFunction(method) {
+export default function routingFunction(method) {
     return (req, res) => {
         functionsDatabase.connectDB(
             method,

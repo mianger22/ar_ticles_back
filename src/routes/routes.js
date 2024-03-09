@@ -1,8 +1,10 @@
-const cors = require("cors");
-const bodyParser = require("body-parser");
-const { getAllComments, saveComment } = require("../controllers/users.controllers");
+import cors from "cors";
+import bodyParser from "body-parser";
+import { get_comments, save_comment } from "../controllers/users.controllers";
 
-module.exports = (app) => {
+export default function routes(app) {
+    // настраиваем АПИ, чтобы не приходила ошибка CORS
+    // app.use(cors({ origin: true, credentials: true }));
     app.use(cors({ origin: '*', credentials: true, optionSuccessStatus: 200 }));
     app.use(bodyParser.json());
     app.use(
@@ -11,6 +13,6 @@ module.exports = (app) => {
         })
     );
 
-    app.get("/getAllComments", getAllComments);
-    app.post("/saveComment", saveComment);
+    app.get("/comments", get_comments);
+    app.post("/comments", save_comment);
 };

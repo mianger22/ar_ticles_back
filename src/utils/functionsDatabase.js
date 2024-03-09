@@ -1,7 +1,7 @@
-const DB = require("../controllers/DB");
-const sqlite3 = require("sqlite3");
+import DB from "../controllers/DB";
+import sqlite3 from "sqlite3";
 
-module.exports = class functionsDatabase {
+export default class functionsDatabase {
     static async connectDB(
         methodDB,
         parametres,

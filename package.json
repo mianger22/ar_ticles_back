@@ -4,6 +4,7 @@
   "description": "This repository manages the comments of the Ar_ticles project",
   "main": "index.js",
   "private": true,
+  "type": "module",
   "scripts": {
     "start": "nodemon index.js"
   },
